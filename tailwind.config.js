@@ -13,7 +13,8 @@ module.exports = {
     colors: {
       blue: colors.lightBlue,
       indigo: colors.indigo,
-      red: colors.rose,
+      red: colors.red,
+      rose: colors.rose,
       gray: colors.blueGray,
       white: '#F9FAFB'
     }
@@ -21,5 +22,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 };
