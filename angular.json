@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "plazaFrontend"
+  "defaultProject": "plazaFrontend",
+  "cli": {
+    "analytics": "69c83c71-ef39-4c67-932b-f0df72a66e58"
+  }
 }
