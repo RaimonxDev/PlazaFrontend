@@ -1,17 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageBlogComponent } from './page-blog.component';
-import { ArticleComponent  } from './components/article/article.component';
+import { PostComponent  } from './components/post/post.component';
+import { HomeBlogComponent } from './components/home-blog/home-blog.component';
 
 const routes: Routes = [
 
-  {path: '', component: PageBlogComponent },
+  { path: '',
+    children: [
+      { path:'', component:HomeBlogComponent },
+      { path: 'post/:slug', component: PostComponent },
+      { path: '**', redirectTo: '/blog', pathMatch: 'prefix'}
+    ]},
 
-  {path: 'article', component: ArticleComponent }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes)
+  ],
   exports: [RouterModule]
 })
 export class PageBlogRoutingModule { }

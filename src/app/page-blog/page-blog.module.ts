@@ -8,18 +8,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { StrapiService } from "./services/strapi.service";
 
 // Pipes
-
 import {PipesModule} from "../pipes/pipes.module"
 
 import { PageBlogRoutingModule } from './page-blog-routing.module';
-import { PageBlogComponent } from './page-blog.component';
-import { ArticleComponent } from './components/article/article.component';
+import { PostComponent } from './components/post/post.component';
+import { HomeBlogComponent } from './components/home-blog/home-blog.component';
+import { AuthorComponent } from './components/author/author.component';
+
 
 
 @NgModule({
   declarations: [
-    PageBlogComponent,
-    ArticleComponent],
+    PostComponent,
+    HomeBlogComponent,
+    AuthorComponent],
   imports: [
     MarkdownModule.forRoot(),
     CommonModule,
