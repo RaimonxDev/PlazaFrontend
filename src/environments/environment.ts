@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  urlImages: "http://localhost:1337"
+  urlImages: "http://localhost:1337",
+  urlSites :"http://localhost",
+  portSites: 1337,
 };
 
 /*
