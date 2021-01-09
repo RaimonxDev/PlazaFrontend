@@ -29,6 +29,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/patterns.min.css",
               "src/styles.scss"
             ],
             "scripts": []
