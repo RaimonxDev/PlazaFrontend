@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
-import { environment } from 'src/environments/environment';
 import { PostResponse } from '../../models/ArticlesResponse';
 import { StrapiService } from '../../services/strapi.service';
 
@@ -13,7 +13,6 @@ export class PostComponent implements OnInit {
   slug: string;
   posts: PostResponse[];
   post: PostResponse;
-  imagesUrl = environment.urlImages
   constructor( private _strapiServices: StrapiService,
                private _router : ActivatedRoute   ) { }
 
@@ -22,8 +21,10 @@ export class PostComponent implements OnInit {
     this.getPost()
   }
 
-  getPost(): void{
-    this._strapiServices.getOnlyPost(this.slug).subscribe( post => this.post = post[0] )
+  getPost(): void {
+    this._strapiServices.getOnlyPost(this.slug)
+      .subscribe( post => this.post = post[0],
+                  err => console.log(`err`));
   }
 
 }

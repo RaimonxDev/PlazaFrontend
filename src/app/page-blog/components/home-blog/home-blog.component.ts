@@ -22,6 +22,7 @@ export class HomeBlogComponent implements OnInit {
       this.posts = articles
     })
   }
+
   goToPost(slug: string){
     this._router.navigate(['blog/post', slug])
   }
