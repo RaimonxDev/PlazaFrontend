@@ -18,8 +18,8 @@
     ],
     "paths": {
       // "@core/*": ["app/core/*"],
-      "@shared/*": ["./src/app/shared"]
-
+      "@shared/*": ["src/app/shared/*"],
+      "@utils/*" : ["src/app/utils/*"]
     }
   }
 }
