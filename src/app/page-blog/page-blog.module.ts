@@ -10,10 +10,12 @@ import { StrapiService } from "./services/strapi.service";
 // Pipes
 import {PipesModule} from "../pipes/pipes.module"
 
+// Components
 import { PageBlogRoutingModule } from './page-blog-routing.module';
 import { PostComponent } from './components/post/post.component';
 import { HomeBlogComponent } from './components/home-blog/home-blog.component';
 import { AuthorComponent } from './components/author/author.component';
+import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.component";
 
 
 
@@ -21,7 +23,9 @@ import { AuthorComponent } from './components/author/author.component';
   declarations: [
     PostComponent,
     HomeBlogComponent,
-    AuthorComponent],
+    AuthorComponent,
+    BreadcrumbsComponent
+  ],
   imports: [
     MarkdownModule.forRoot(),
     CommonModule,

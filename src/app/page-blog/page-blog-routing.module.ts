@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '',
     children: [
       { path:'', component:HomeBlogComponent },
-      { path: 'post/:slug', component: PostComponent },
+      { path: 'post/:slug', component: PostComponent, data: {title:'post'} },
       { path: '**', redirectTo: '/blog', pathMatch: 'prefix'}
     ]},
 
