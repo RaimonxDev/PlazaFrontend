@@ -14,7 +14,7 @@ import { HomeModule } from './pageHome/home.module'
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,

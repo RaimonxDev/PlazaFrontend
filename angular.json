@@ -18,7 +18,7 @@
           "builder": "ngx-build-plus:browser",
           "options": {
             "extraWebpackConfig": "webpack.config.js",
-            "outputPath": "dist/plazaFrontend",
+            "outputPath": "dist/plazaFrontend/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -107,7 +107,8 @@
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "e2e/tsconfig.json",
+              "tsconfig.server.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -124,6 +125,53 @@
             "production": {
               "devServerTarget": "plazaFrontend:serve:production"
             }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/plazaFrontend/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "plazaFrontend:build",
+            "serverTarget": "plazaFrontend:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "plazaFrontend:build:production",
+              "serverTarget": "plazaFrontend:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "plazaFrontend:build:production",
+            "serverTarget": "plazaFrontend:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }
