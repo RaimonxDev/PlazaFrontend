@@ -17,7 +17,8 @@ module.exports = {
       rose: colors.rose,
       gray: colors.blueGray,
       white: '#F9FAFB',
-      purewhite: '#FFF'
+      purewhite: '#FFF',
+      limon: '#DCE546'
     }
   },
   variants: {
