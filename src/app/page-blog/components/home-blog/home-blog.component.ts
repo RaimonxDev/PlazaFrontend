@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { PostResponse } from '../../models/ArticlesResponse';
+import { PostResponse } from '../../models/PostResponse';
 import { StrapiService } from '../../services/strapi.service';
 
 @Component({
