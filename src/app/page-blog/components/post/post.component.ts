@@ -23,7 +23,8 @@ export class PostComponent implements OnInit, OnDestroy {
 
   constructor( private _strapiServices: StrapiService,
                private _router : ActivatedRoute,
-               private seo: SeoService) { }
+               private seo: SeoService,
+               private _ac : ActivatedRoute) { }
 
   ngOnInit(): void {
     this._router.params.subscribe(params => this.slug = params.slug)
@@ -31,13 +32,17 @@ export class PostComponent implements OnInit, OnDestroy {
     this.getPost()
   }
 
+  // getPost() {
+  //   this._strapiServices.getOnlyPost(this.slug)
+  //     .subscribe( (post: PostResponse) => {
+  //       this.post = post
+  //       this.seo.getTagsForPost(post)
+  //     },
+  //     err => console.log(`err`));
+  // }
   getPost() {
-    this._strapiServices.getOnlyPost(this.slug)
-      .subscribe( (post: PostResponse) => {
-        this.post = post
-        this.seo.getTagsForPost(post)
-      },
-      err => console.log(`err`));
+    this.post = this._ac.snapshot.data.post
+    this.seo.getTagsForPost(this.post)
   }
 
   ngOnDestroy(){

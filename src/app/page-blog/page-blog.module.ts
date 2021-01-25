@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { StrapiService } from "./services/strapi.service";
+// Resolver
+import { PostResolve } from "./resolvers/post.resolver";
 
 // Pipes
 import {PipesModule} from "../pipes/pipes.module"
@@ -34,7 +36,9 @@ import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.compo
     PipesModule
   ],
   providers:[
-    StrapiService
+    StrapiService,
+    PostResolve
+
   ]
 })
 export class PageBlogModule { }
