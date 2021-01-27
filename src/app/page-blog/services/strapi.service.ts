@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 // Handle error
 import { Observable } from "rxjs";
-import { catchError, map } from "rxjs/operators";
+import { catchError, delay, map } from "rxjs/operators";
 import { handleHttpResponseError } from "@utils/http-errors";
 
 
@@ -30,7 +30,8 @@ export class StrapiService {
     return this._http.get<PostResponse[]>(`${this.urlSites}:${this.portSites}/posts/?slug=${slug}`)
       .pipe(
         catchError(handleHttpResponseError),
-        map((data)=> {return data[0]})
+        map((data)=> {return data[0]}),
+        delay(500)
       );
   }
 
