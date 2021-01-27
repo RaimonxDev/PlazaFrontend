@@ -3,13 +3,15 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { IconLoaderComponent } from './components/icon-loader/icon-loader.component';
 
 
 
 @NgModule({
   declarations: [
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    IconLoaderComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   exports : [
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    IconLoaderComponent
   ]
 })
 export class SharedModule { }
