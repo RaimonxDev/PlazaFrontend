@@ -1,6 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors')
-
 module.exports = {
   purge: ['./src/**/*.{html,ts}'],
   darkMode: false, // or 'media' or 'class'
@@ -25,7 +24,11 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio')
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography')
   ],
 };
+
+
+
