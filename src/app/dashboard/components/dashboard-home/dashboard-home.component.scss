@@ -1,0 +1,13 @@
+.link-active {
+  @apply bg-indigo-50 border-indigo-500 text-indigo-700;
+
+  &:hover {
+    @apply bg-indigo-50 text-indigo-700;
+  }
+}
+
+.icon-active {
+  @apply text-indigo-500 group-hover:text-indigo-500;
+  &:hover {
+  }
+}
