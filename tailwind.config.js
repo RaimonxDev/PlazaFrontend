@@ -17,7 +17,8 @@ module.exports = {
       gray: colors.blueGray,
       white: '#F9FAFB',
       purewhite: '#FFF',
-      limon: '#DCE546'
+      limon: '#DCE546',
+      green: colors.green
     }
   },
   variants: {
