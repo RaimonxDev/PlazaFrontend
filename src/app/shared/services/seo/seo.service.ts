@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 import { handleHttpResponseError } from '@utils/http-errors';
 // Models
 import { PostResponse } from 'src/app/page-blog/models/PostResponse';
-import { MetaTagsPageResponse, TAGS } from "../models/MetaTagsPages";
+import { MetaTagsPageResponse, TAGS } from "../../models/MetaTagsPages";
 
 
 @Injectable({
