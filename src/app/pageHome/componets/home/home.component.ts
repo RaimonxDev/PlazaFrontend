@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { SeoService } from "@shared/services/seo.service";
+import { SeoService } from "@shared/services/seo/seo.service";
 
 
 

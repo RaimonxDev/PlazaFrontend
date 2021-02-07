@@ -8,7 +8,7 @@ import { StrapiService } from '../../services/strapi.service';
 // Seo
 import { Meta, Title } from '@angular/platform-browser';
 import { map } from 'rxjs/operators';
-import { SeoService } from '@shared/services/seo.service';
+import { SeoService } from '@shared/services/seo/seo.service';
 
 @Component({
   selector: 'app-post',
