@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { trigger, transition, animate, style } from '@angular/animations';
+import { AuthService } from '../../../auth/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -49,9 +51,14 @@ import { trigger, transition, animate, style } from '@angular/animations';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  showItemLogin = false
+
+  constructor(private _authServices: AuthService, private _router: Router) {
+    this._authServices.UserHasLogged.subscribe(isLogged => this.showItemLogin = isLogged)
+   }
 
   ngOnInit(): void {
+
   }
 
   @ViewChild('toggleButton') toggleButton: ElementRef;
@@ -63,8 +70,12 @@ export class NavbarComponent implements OnInit {
 
 
   toogleOpen ():void {
-
     this.isOpenMenu = !this.isOpenMenu
+  }
+
+  logout(){
+    this._router.navigateByUrl('/auth')
+    this._authServices.logout()
   }
 
 }
