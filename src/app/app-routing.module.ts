@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'home', loadChildren:    () => import('./pageHome/home.module').then(m => m.HomeModule),data: {title:'home'} },
   { path: 'about', loadChildren:   () => import('./about/about.module').then(m => m.AboutModule),data: {title:'about'} },
   { path: 'blog', loadChildren:    () => import('./page-blog/page-blog.module').then(m => m.PageBlogModule),data: {title:'blog'} },
+  { path: 'categorys', loadChildren:    () => import('./page-categorys/page-categorys.module').then(m => m.PageCategorysModule),data: {title:'categorys'} },
   // { path: 'auth', loadChildren:    () => import('./auth/auth.module').then(m => m.AuthModule),data: {title:'auth'} },
   // { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),data: {title:'dashboard'},
   //  canActivate: [ProfileGuard],

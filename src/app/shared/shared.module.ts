@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { IconLoaderComponent } from './components/icon-loader/icon-loader.component';
+import { E503Component } from './errorsComponent/e503/e503.component';
 
 
 
@@ -11,7 +12,8 @@ import { IconLoaderComponent } from './components/icon-loader/icon-loader.compon
   declarations: [
     FooterComponent,
     NavbarComponent,
-    IconLoaderComponent
+    IconLoaderComponent,
+    E503Component
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { IconLoaderComponent } from './components/icon-loader/icon-loader.compon
     FooterComponent,
     NavbarComponent,
     IconLoaderComponent,
+    E503Component
   ]
 })
 export class SharedModule { }

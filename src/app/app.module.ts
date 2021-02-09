@@ -10,7 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './pageHome/home.module'
 
 import { CommonModule } from '@angular/common';
-import { DisqusModule, DISQUS_SHORTNAME } from 'ngx-disqus';
+import { DISQUS_SHORTNAME } from 'ngx-disqus';
 
 
 
