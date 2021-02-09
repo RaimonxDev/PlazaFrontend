@@ -15,12 +15,12 @@ import { IconLoaderComponent } from './components/icon-loader/icon-loader.compon
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   exports : [
     FooterComponent,
     NavbarComponent,
-    IconLoaderComponent
+    IconLoaderComponent,
   ]
 })
 export class SharedModule { }

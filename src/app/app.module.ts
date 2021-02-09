@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './pageHome/home.module'
 
 import { CommonModule } from '@angular/common';
+import { DisqusModule, DISQUS_SHORTNAME } from 'ngx-disqus';
+
 
 
 
@@ -25,7 +27,9 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HomeModule,
   ],
-  providers: [],
+  providers: [
+    { provide: DISQUS_SHORTNAME, useValue: 'plazafront-end' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

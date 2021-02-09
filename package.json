@@ -27,6 +27,7 @@
     "@angular/router": "~11.1.0",
     "@nguniversal/express-engine": "^10.0.2",
     "express": "^4.15.2",
+    "ngx-disqus": "^2.4.3",
     "ngx-google-analytics": "^11.0.0",
     "ngx-markdown": "^11.0.1",
     "rxjs": "~6.5.5",
