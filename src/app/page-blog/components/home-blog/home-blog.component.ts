@@ -12,6 +12,7 @@ import { StrapiService } from '../../services/strapi.service';
 export class HomeBlogComponent implements OnInit {
   urlImages = environment.urlImages
   posts: PostResponse[] = []
+  errorData = false
 
   constructor( private _strapiServices: StrapiService,
                private _router: Router
@@ -20,11 +21,15 @@ export class HomeBlogComponent implements OnInit {
   ngOnInit(): void {
       this._strapiServices.getPosts().subscribe( (articles: PostResponse[]) => {
       this.posts = articles
-    })
+    },err => this.errorData = true )
   }
 
   goToPost(slug: string){
     this._router.navigate(['blog/post', slug])
+  }
+
+  goCategories(category){
+    this._router.navigate(['categories', category])
   }
 
 }
