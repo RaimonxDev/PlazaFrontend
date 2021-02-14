@@ -35,24 +35,28 @@
 
       <div class="relative lg:flex lg:items-center">
         <div class="hidden lg:block lg:flex-shrink-0 ">
-          <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="https://avatars0.githubusercontent.com/u/39868803?s=460&u=da8e6df1971b2bc93d52bd1a17de7821bdb04e61&v=4" alt="">
+            <img *ngFor="let picture of author"  class="h-64 w-64 rounded-full xl:h-80 xl:w-80" [src]="urlImages | sanitizerUrl: picture.picture_author.url " alt="">
         </div>
 
         <div class="relative lg:ml-10">
           <blockquote class="relative">
             <div class="text-2xl leading-9 font-medium text-gray-900">
-              <p>
+              <!-- <p>
                 Hola. soy amante a la tecnologia web. Siempre me ha gustado aprender cosas utiles que me ayuden a <span class="font-medium text-indigo-600">facilitar</span> mi dia a dia. Comenze mi camino como desarrollador web hace 2 años un camino confuzo lleno de muchas dudaspero sobre todo lleno de entusiamo por aprender y ser parte de algo. en mi blog te compartire trucos que me hubiese gustado saber cuando comenze. y cosas que voy aprendiendo sobre la marcha
-              </p>
+
+
+              </p> -->
+              <p>Hola me presento en la world wide web. Siempre me ha gustado aprender cosas utiles que me ayuden a <span class="font-medium text-indigo-600">facilitar</span>
+              mi dia a dia. Es mi hobbie aprender las tecnologias web y su entorno. Ya tengo 2 años desde que comenze ha sido algo duro y complicado. desde ahora compartire trucos, guias, tutoriales que me ha ayudado a resolver problemas al momento de desarrollar una aplicacion. </p><span class="font-medium text-indigo-600">Sin más Espero que aprendas algo de acá</span>
             </div>
             <footer class="mt-8">
               <div class="flex">
                 <div class="flex-shrink-0 lg:hidden">
                   <img class="h-12 w-12 rounded-full" src="https://avatars0.githubusercontent.com/u/39868803?s=460&u=da8e6df1971b2bc93d52bd1a17de7821bdb04e61&v=4" alt="">
                 </div>
-                <div class="ml-4 lg:ml-0">
-                  <div class="text-base font-medium text-gray-900">Ramón Martinez</div>
-                  <div class="text-base font-medium text-indigo-600">Desarrollador Frontend Angular</div>
+                <div *ngFor="let item of author" class="ml-4 lg:ml-0">
+                  <div class="text-base font-medium text-gray-900 capitalize">{{item.last_name}} {{item.first_name}}</div>
+                  <div class="text-base font-medium text-indigo-600">{{item.about_author}}</div>
                 </div>
               </div>
             </footer>
@@ -76,7 +80,7 @@
           class="text-red-600 font-bold">Angular</span>
         </p>
      </div>
-
+     <!-- grid icons -->
       <div class="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
         <div class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200 |  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
           <img class="max-h-16" src="assets/icon-technology/angular_icon.png" alt="angular_icon">
@@ -107,8 +111,8 @@
   </div>
 </div>
 
-<h2 class="text-2xl text-center font-bold mt-8">Solo Elegí 1 ó los tres</h2>
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-2xl text-center font-bold mt-8 bg-purewhite">Herramientas para Desarrollo Frontend y Deploy </h2>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 bg-purewhite">
   <div class="sm:flex flex-col lg:flex-row items-center">
 
     <div class="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
@@ -116,7 +120,8 @@
     </div>
 
     <div>
-      <h4 class="text-2xl font-bold text-red-600">Solo elegimos las tecnologia mas comoda para nosotros </h4>
+      <h4 class="text-2xl font-bold text-red-600">Solo tenemos tenemos que elegir la mas comoda para nosotros</h4>
+      <p class="text-xl text-red-500 mt-1" >Aquí encontraras herramientas para que tu Desarrollo Web del lado del Frontend sea toda una diversion </p>
       <!-- This example requires Tailwind CSS v2.0+ -->
       <div class="">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
