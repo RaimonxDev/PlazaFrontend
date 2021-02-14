@@ -1,0 +1,86 @@
+########## Container Mastic ###########
+version: "3.3"
+
+services:
+  plazafrontend:
+    #image: raimonxx/mastic:2.2.0
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      # CONEXION HTTP A ENTREPOINT LLAMADO WEB
+      - "traefik.http.routers.plazafrontend-http.rule=Host(`plazafrontend.io`) || Host(`www.plazafrontend.io`)"
+      - "traefik.http.routers.plazafrontend-http.entrypoints=web"
+
+      # REDIRECCION DE HTTP A HTTPS
+      - "traefik.http.middlewares.plazafrontend-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.plazafrontend-http.middlewares=plazafrontend-https-redirect"
+      # REALIZA LA REDICCION DE HTTP CON WWW Y NON-WWW A HTTPS
+      - "traefik.http.middlewares.plazafrontend-www-https-redirect.redirectregex.regex=^http://(?:www.)?plazafrontend.io/(.*)"
+      - "traefik.http.middlewares.plazafrontend-www-https-redirect.redirectregex.replacement=https://plazafrontend.io/$${1}"
+
+      - "traefik.http.routers.plazafrontend-http.middlewares=plazafrontend-www-https-redirect"
+      # HABILITAMOS LA CONEXION HTTPS A ENTREPOINT LLAMADO "WEBSECURE"
+      - "traefik.http.routers.plazafrontend-https.entrypoints=websecure"
+      - "traefik.http.routers.plazafrontend-https.rule=Host(`plazafrontend.io`) || Host(`www.plazafrontend.io`)"
+      - "traefik.http.routers.plazafrontend-https.tls=true"
+
+      # REDIRECCION WEB WWW HTTPS A NO-WWW EN HTTPS
+      - "traefik.http.middlewares.plazafrontend-https-www-redirect.redirectregex.regex=^https://www.plazafrontend.io/(.*)"
+      - "traefik.http.middlewares.plazafrontend-https-www-redirect.redirectregex.replacement=https://plazafrontend.io/$${1}"
+      - "traefik.http.routers.plazafrontend-https.middlewares=plazafrontend-https-www-redirect"
+      # HACER UN REDIRECCION PERMANENTE
+      - "traefik.http.middlewares.plazafrontend-www-https-redirect.redirectregex.permanent=true"
+      - "traefik.http.middlewares.plazafrontend-secure-www-redirect.redirectregex.permanent=true"
+      # CERTIFICADO
+      - "traefik.http.routers.plazafrontend-https.tls.certresolver=myresolver"
+      # PUERTO QUE ESTARA EXPUESTO
+      - "traefik.http.services.plazafrontend-https.loadbalancer.server.port=4000"
+    networks:
+      - traefik
+      - plazafrontend
+  strapi:
+    image: strapi/strapi:3.3.2-node12
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      DATABASE_CLIENT: ${DATABASE_HOST}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PASSWORD}
+      DATABASE_USERNAME: ${DATABASE_NAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - ./strapi-mastic:/srv/app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.strapi.rule=Host(`api.plazafrontend.io`)"
+      - "traefik.http.routers.strapi.entrypoints=websecure"
+      - "traefik.http.routers.strapi.tls.certresolver=myresolver"
+      - "traefik.http.services.strapi.loadbalancer.server.port=1337"
+    networks:
+      - traefik
+      - plazafrontend
+
+  postgres:
+    image: postgres:12
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${DATABASE_NAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - plazafrontendDB:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - plazafrontend
+    labels:
+      - traefik.enable=false
+
+networks:
+  traefik:
+    external: true
+  plazafrontend:
+
+volumes:
+  plazafrontendDB:
