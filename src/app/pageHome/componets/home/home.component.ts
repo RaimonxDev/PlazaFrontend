@@ -16,7 +16,7 @@ import { environment } from '../../../../environments/environment';
 export class HomeComponent implements OnInit, OnDestroy {
 
   author: authorInfoResponseShort[];
-  urlImages = environment.urlImages;
+  urlWebsite = environment.urlWebsite;
 
   constructor( private seo: SeoService, private homeService: HomeService) { }
 

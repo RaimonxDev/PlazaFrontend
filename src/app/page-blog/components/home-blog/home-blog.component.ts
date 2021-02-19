@@ -10,7 +10,7 @@ import { StrapiService } from '../../services/strapi.service';
   styleUrls: ['./home-blog.component.scss']
 })
 export class HomeBlogComponent implements OnInit {
-  urlImages = environment.urlImages
+  urlWebsite = environment.urlWebsite
   posts: PostResponse[] = []
   errorData = false
 

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { AllCategoryResponse, Post, shortCategoryResponse } from '../models/allCategorysResponse';
-import { map, pluck, switchMap } from 'rxjs/operators';
+import { AllCategoryResponse,  shortCategoryResponse } from '../models/allCategorysResponse';
+import { map, switchMap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { CategoryPostResponse } from '../models/categoryPostResponse';
 
@@ -11,11 +11,12 @@ import { CategoryPostResponse } from '../models/categoryPostResponse';
 })
 export class CategoryService {
 
-  private allCategorys = environment.endPointAllCategorys
+  private urlWebsite = environment.urlWebsite
+
   constructor(private _http: HttpClient) { }
 
   getAllCategory(): Observable<shortCategoryResponse[]> {
-    return this._http.get<AllCategoryResponse[]>(`${this.allCategorys}`).pipe(
+    return this._http.get<AllCategoryResponse[]>(`${this.urlWebsite}/categories`).pipe(
       map( (data)=> {
         return data.map( ( {id,name_category,image:{name,url},posts} ) => {
           return {
@@ -32,8 +33,8 @@ export class CategoryService {
     )
   }
 
-  getPostsOfCategory (nameCategory){
-    return this._http.get<CategoryPostResponse[]>(`http://localhost:1337/categories?name_category=${nameCategory}`).pipe(
+  getPostsOfCategory (nameCategory: string){
+    return this._http.get<CategoryPostResponse[]>(`${this.urlWebsite}/categories?name_category=${nameCategory}`).pipe(
       // map 1: extrae posts de la respuesta
       // map 2: enviamos un of para emitir cada valor por separado
       // switchMap: Se subscribe al of emitido y devolvemos 1 array con todos los posts{}

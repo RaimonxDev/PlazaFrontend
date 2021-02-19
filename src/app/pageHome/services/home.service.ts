@@ -9,13 +9,12 @@ import { AuthorInfoResponse, } from '../models/authorInfoResponse';
 })
 export class HomeService {
 
-  // private urlSites:string = environment.urlSites
-  // private portSites: number = environment.portSites
+  private urlWebsite: string = environment.urlWebsite
   constructor( private _http: HttpClient) {  }
 
   // Solucionar Ruta en duro
   getInfoAuthor () {
-     return this._http.get<AuthorInfoResponse[]>(`http://localhost:1337/authors?email=ramonmartinezcordero@gmail.com`)
+     return this._http.get<AuthorInfoResponse[]>(`${this.urlWebsite}/authors?email=ramon@plazafrontend.io`)
       .pipe(
         map( data => {
           return data.map(({id,first_name,last_name,about_author,email,picture_author:{url}}) => {

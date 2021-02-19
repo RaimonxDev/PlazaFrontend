@@ -14,20 +14,19 @@ import { PostResponse  } from "../models/PostResponse";
 
 export class StrapiService {
   // url y port del sitio web
-  urlSites:string = environment.urlSites
-  portSites: number = environment.portSites
+  urlWebsite:string = environment.urlWebsite
 
   constructor(private _http: HttpClient) { }
 
   getPosts() {
-    return this._http.get<PostResponse[]>(`${this.urlSites}:${this.portSites}/posts`)
+    return this._http.get<PostResponse[]>(`${this.urlWebsite}/posts`)
     .pipe(
       catchError(handleHttpResponseError)
     )
   }
 
   getOnlyPost(slug: string) : Observable <PostResponse>{
-    return this._http.get<PostResponse[]>(`${this.urlSites}:${this.portSites}/posts/?slug=${slug}`)
+    return this._http.get<PostResponse[]>(`${this.urlWebsite}/posts/?slug=${slug}`)
       .pipe(
         catchError(handleHttpResponseError),
         map((data)=> {return data[0]}),

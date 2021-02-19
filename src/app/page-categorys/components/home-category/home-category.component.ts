@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HomeCategoryComponent implements OnInit {
 
-  urlImages = environment.urlImages
+  urlWebsite = environment.urlWebsite
   categorys$: Observable<shortCategoryResponse[]>;
   constructor( private _servicesCategory: CategoryService,
               private _router: Router) { }

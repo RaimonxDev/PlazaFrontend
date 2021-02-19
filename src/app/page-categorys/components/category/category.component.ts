@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../../services/category.service';
 import { Post } from '../../models/categoryPostResponse';
-import { StrapiService } from '../../../page-blog/services/strapi.service';
 
 @Component({
   selector: 'app-category',

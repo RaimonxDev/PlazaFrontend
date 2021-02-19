@@ -17,7 +17,7 @@
 
         <div *ngFor="let category of categorys$ | async" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
           <div class="flex-shrink-0 pb-1">
-            <img class="h-48 w-full object-contain" [src]=" urlImages | sanitizerUrl:category.image.url " alt="">
+            <img class="h-48 w-full object-contain" [src]=" urlWebsite | sanitizerUrl:category.image.url " alt="">
           </div>
 
           <div class="flex-1 flex flex-col justify-between py-2 px-4 bg-indigo-50 mt-2">

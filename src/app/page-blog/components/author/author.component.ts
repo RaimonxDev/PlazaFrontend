@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthorComponent implements OnInit {
 
-  urlImages : string = environment.urlImages;
+  urlWebsite : string = environment.urlWebsite;
   @Input() firtsName : String;
   @Input() lastName : String;
   @Input() emailAuthor : String;

@@ -17,8 +17,7 @@ import { MetaTagsPageResponse, TAGS } from "../../models/MetaTagsPages";
   providedIn: 'root'
 })
 export class SeoService {
-  private urlSites:string = environment.urlSites
-  private portSites: number = environment.portSites
+  private urlWebsite:string = environment.urlWebsite
 
   constructor(  private metaTagService: Meta,
                 private titleTag: Title,
@@ -48,14 +47,14 @@ export class SeoService {
     const fbTitle =     {'property': 'og:title', content:title},
       fbDescription =   {'property': 'og:description', content:description},
       fbSiteName =      {'property': 'og:site_name', content:environment.nameWeb},
-      fbImage =         {'property': 'og:image', content:`${environment.urlImages}${image}`},
-      fbUrl =           {'property': 'og:url', content:`${environment.urlSites}${url}`},
+      fbImage =         {'property': 'og:image', content:`${environment.urlWebsite}${image}`},
+      fbUrl =           {'property': 'og:url', content:`${environment.urlWebsite}${url}`},
 
       // tag to twitter
       twTitle =         {'name': 'twitter:title', content:title},
       twDescription =   {'name': 'twitter:description', content:description},
-      twImage =         {'name': 'twitter:image', content:`${environment.urlImages}${image}`},
-      twUrl =           {'name': 'twitter:card', content:`${environment.urlSites}${url}`}
+      twImage =         {'name': 'twitter:image', content:`${environment.urlWebsite}${image}`},
+      twUrl =           {'name': 'twitter:card', content:`${environment.urlWebsite}${url}`}
 
   return [fbTitle,fbDescription,fbImage,fbUrl,twTitle,twDescription,twImage,twUrl,fbSiteName]
 
@@ -78,7 +77,7 @@ export class SeoService {
   // En las paginas los Datos del "Seo" los agregamos desde el backend
   getTagForPage(page: string): Subscription {
 
-    return this._http.get(`${this.urlSites}:${this.portSites}/${page}`)
+    return this._http.get(`${this.urlWebsite}/${page}`)
 
     .pipe(
       catchError(handleHttpResponseError),
