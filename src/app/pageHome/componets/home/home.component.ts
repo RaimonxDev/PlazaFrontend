@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.seo.getTagForPage('home')
-    this.homeService.getInfoAuthor().subscribe(author => {this.author = author, console.log(author);})
+    this.homeService.getInfoAuthor().subscribe(author => {this.author = author})
   }
 
 
