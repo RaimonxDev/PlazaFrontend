@@ -21,5 +21,10 @@
       "@shared/*": ["src/app/shared/*"],
       "@utils/*" : ["src/app/utils/*"]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "preserveWhitespaces": true,
   }
+
 }
