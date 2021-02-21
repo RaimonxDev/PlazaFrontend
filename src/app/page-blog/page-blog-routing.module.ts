@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       { path:'', component:HomeBlogComponent },
 
-      { path: 'post/:slug', component: PostComponent,
+      { path: ':slug', component: PostComponent,
        data: {title:'post'},
        resolve: {post: PostResolve} },
 
