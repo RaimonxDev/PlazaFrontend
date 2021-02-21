@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PostResponse } from '../../models/PostResponse';
 
 import { SeoService } from '@shared/services/seo/seo.service';
@@ -16,9 +16,11 @@ export class PostComponent implements OnInit, OnDestroy {
   post: PostResponse;
 
 
+
   constructor(
                private seo: SeoService,
-               private _ac : ActivatedRoute) { }
+               private _ac : ActivatedRoute,
+               private _router: Router) { }
 
   ngOnInit(): void {
     this._ac.params.subscribe(params => this.slug = params.slug)

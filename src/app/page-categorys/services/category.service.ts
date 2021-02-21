@@ -11,12 +11,12 @@ import { CategoryPostResponse } from '../models/categoryPostResponse';
 })
 export class CategoryService {
 
-  private urlWebsite = environment.urlWebsite
+  private APIurl = environment.APIurl
 
   constructor(private _http: HttpClient) { }
 
   getAllCategory(): Observable<shortCategoryResponse[]> {
-    return this._http.get<AllCategoryResponse[]>(`${this.urlWebsite}/categories`).pipe(
+    return this._http.get<AllCategoryResponse[]>(`${this.APIurl}/categories`).pipe(
       map( (data)=> {
         return data.map( ( {id,name_category,image:{name,url},posts} ) => {
           return {
@@ -34,7 +34,7 @@ export class CategoryService {
   }
 
   getPostsOfCategory (nameCategory: string){
-    return this._http.get<CategoryPostResponse[]>(`${this.urlWebsite}/categories?name_category=${nameCategory}`).pipe(
+    return this._http.get<CategoryPostResponse[]>(`${this.APIurl}/categories?name_category=${nameCategory}`).pipe(
       // map 1: extrae posts de la respuesta
       // map 2: enviamos un of para emitir cada valor por separado
       // switchMap: Se subscribe al of emitido y devolvemos 1 array con todos los posts{}

@@ -7,11 +7,11 @@ import { AboutResponse } from './models/aboutResponse'
 
 @Injectable()
 export class AboutService {
-  urlWebsite:string = environment.urlWebsite
+  APIurl:string = environment.APIurl
 
   constructor(private _http: HttpClient)  { }
 
   getContentAbout () : Observable<AboutResponse>{
-    return this._http.get<AboutResponse>(`${this.urlWebsite}/about`)
+    return this._http.get<AboutResponse>(`${this.APIurl}/about`)
   }
 }

@@ -35,7 +35,7 @@
 
       <div class="relative lg:flex lg:items-center">
         <div class="hidden lg:block lg:flex-shrink-0 ">
-            <img *ngFor="let picture of author"  class="h-64 w-64 rounded-full xl:h-80 xl:w-80" [src]="urlWebsite | sanitizerUrl: picture.picture_author.url " alt="">
+            <img *ngFor="let picture of author"  class="h-64 w-64 rounded-full xl:h-80 xl:w-80" [src]="APIurl | sanitizerUrl: picture.picture_author.url " alt="">
         </div>
 
         <div class="relative lg:ml-10">

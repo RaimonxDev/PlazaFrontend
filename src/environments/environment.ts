@@ -5,9 +5,11 @@
 export const environment = {
   production: false,
   nameWeb: 'plazafrontend.io',
-  urlWebsite: "http://localhost:1337",
+  urlWeb: "http://localhost:4200",
+  APIurl: "http://localhost:1337",
   endPointAllCategorys: 'http://localhost:1337/categories',
   endPointSingleCategory: 'http://localhost:1337/categories?name_category=deploy',
+  GA: 'G-F1LL8546EJ'
 };
 
 /*

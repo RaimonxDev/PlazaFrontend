@@ -8,11 +8,11 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthorComponent implements OnInit {
 
-  urlWebsite : string = environment.urlWebsite;
-  @Input() firtsName : String;
-  @Input() lastName : String;
-  @Input() emailAuthor : String;
-  @Input() imageAuthor : String;
+  APIurl : string = environment.APIurl;
+  @Input() firtsName : string;
+  @Input() lastName : string;
+  @Input() emailAuthor : string;
+  @Input() imageAuthor : string;
   @Input() dateArticle : Date;
 
   constructor() { }

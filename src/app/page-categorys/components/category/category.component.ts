@@ -26,7 +26,7 @@ export class CategoryComponent implements OnInit {
   }
 
   goPosts(slug: string){
-    this._router.navigateByUrl(`blog/post/${slug}`)
+    this._router.navigateByUrl(`blog/${slug}`)
   }
 
 
