@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PostResponse } from '../../models/PostResponse';
 
 import { SeoService } from '@shared/services/seo/seo.service';
+import { StrapiService } from '../../services/strapi.service';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-post',
@@ -16,19 +18,20 @@ export class PostComponent implements OnInit, OnDestroy {
   post: PostResponse;
 
 
-
   constructor(
                private seo: SeoService,
                private _ac : ActivatedRoute,
-               private _router: Router) { }
+               private _strapiServices: StrapiService) { }
 
   ngOnInit(): void {
     this._ac.params.subscribe(params => this.slug = params.slug)
     this.getPost()
   }
   getPost() {
-    this.post = this._ac.snapshot.data.post
-    this.seo.getTagsForPost(this.post)
+    this._strapiServices.getOnlyPost(this.slug).subscribe(dataPost => {
+      this.post = dataPost
+      this.seo.getTagsForPost(this.post)
+    })
   }
 
   ngOnDestroy(){

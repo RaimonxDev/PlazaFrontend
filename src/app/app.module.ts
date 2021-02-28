@@ -15,7 +15,8 @@ import { DISQUS_SHORTNAME } from 'ngx-disqus';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     CommonModule,

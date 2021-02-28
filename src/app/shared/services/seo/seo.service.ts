@@ -20,6 +20,7 @@ import { tag } from '@shared/models/TagsSeo';
 })
 export class SeoService {
   private urlWeb:string = environment.urlWeb
+  private APIurlDevImages:string = environment.APIurlDevImages
   private APIurl:string = environment.APIurl
 
   private tagDefault = {
@@ -80,7 +81,7 @@ export class SeoService {
           let tags: tag = {
             title: postTags.title,
             description: postTags.excerpt,
-            image: `${this.APIurl}${postTags.image.url}`,
+            image: `${this.APIurlDevImages}${postTags.image.url}`,
             url:`${this.urlWeb}/${postTags.slug}`
           }
           return this.formatTags(tags)
@@ -103,7 +104,7 @@ export class SeoService {
           let tag: tag = {
              title: tags.title,
              description: tags.description,
-             image: `${this.APIurl}${tags.image[0].url}`,
+             image: `${this.APIurlDevImages}${tags.image[0].url}`,
              url:`${this.urlWeb}${currentPage}`
            }
            return this.formatTags(tag)

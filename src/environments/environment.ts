@@ -7,6 +7,7 @@ export const environment = {
   nameWeb: 'plazafrontend.io',
   urlWeb: "http://localhost:4200",
   APIurl: "http://localhost:1337",
+  APIurlDevImages: "http://localhost:1337",
   endPointAllCategorys: 'http://localhost:1337/categories',
   endPointSingleCategory: 'http://localhost:1337/categories?name_category=deploy',
   GA: 'G-F1LL8546EJ'

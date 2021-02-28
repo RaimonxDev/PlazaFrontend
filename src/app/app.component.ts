@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
 import { environment } from '../environments/environment.prod';
+import { filter } from 'rxjs/operators';
+import * as AOS from 'aos';
 declare var gtag
 
 @Component({
@@ -9,7 +10,7 @@ declare var gtag
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'plazaFrontend';
 
   constructor(private _router: Router) {
@@ -23,4 +24,11 @@ export class AppComponent {
       })
     })
   }
+
+  ngOnInit() {
+    AOS.init({
+      once: true,
+    });
+  }
+
 }

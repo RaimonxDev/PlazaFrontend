@@ -13,7 +13,7 @@ import { SeoService } from '../../../shared/services/seo/seo.service';
 })
 export class HomeCategoryComponent implements OnInit, OnDestroy {
 
-  APIurl = environment.APIurl
+  APIurlDevImages = environment.APIurlDevImages
   categorys$: Observable<shortCategoryResponse[]>;
   constructor( private _servicesCategory: CategoryService,
               private _router: Router,

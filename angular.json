@@ -30,6 +30,7 @@
             ],
             "styles": [
               "src/assets/css/patterns.min.css",
+              "./node_modules/aos/dist/aos.css",
               "src/styles.scss"
             ],
             "scripts": []

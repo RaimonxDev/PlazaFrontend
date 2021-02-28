@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-  <h1 class="text-3xl font-extrabold sm:text-4xl text-center md:py-12 py-6 | bg-indigo-200xt text-transparent bg-indigo-200t-to-r from-indigo-500 via-indigo-600 to-indigo-800"> Bienvenid@s</h1>
+  <h1 data-aos="fade-down" class="text-3xl font-extrabold sm:text-4xl text-center md:py-12 py-6 | bg-indigo-200xt text-transparent bg-indigo-200t-to-r from-indigo-500 via-indigo-600 to-indigo-800"> Bienvenid@s</h1>
 
 
   <section class="bg-indigo-200te overflow-hidden">
@@ -34,18 +34,13 @@
         </div>
 
       <div class="relative lg:flex lg:items-center">
-        <div class="hidden lg:block lg:flex-shrink-0 ">
-            <img *ngFor="let picture of author"  class="h-64 w-64 rounded-full xl:h-80 xl:w-80" [src]="APIurl | sanitizerUrl: picture.picture_author.url " alt="">
+        <div data-aos="fade-right" class="hidden lg:block lg:flex-shrink-0 ">
+            <img *ngFor="let picture of author"  class="h-64 w-64 rounded-full xl:h-80 xl:w-80" [src]="APIurlDevImages | sanitizerUrl: picture.picture_author.url " alt="">
         </div>
 
-        <div class="relative lg:ml-10">
+        <div data-aos="fade-left" class="relative lg:ml-10">
           <blockquote class="relative">
             <div class="text-2xl leading-9 font-medium text-gray-900">
-              <!-- <p>
-                Hola. soy amante a la tecnologia web. Siempre me ha gustado aprender cosas utiles que me ayuden a <span class="font-medium text-indigo-600">facilitar</span> mi dia a dia. Comenze mi camino como desarrollador web hace 2 años un camino confuzo lleno de muchas dudaspero sobre todo lleno de entusiamo por aprender y ser parte de algo. en mi blog te compartire trucos que me hubiese gustado saber cuando comenze. y cosas que voy aprendiendo sobre la marcha
-
-
-              </p> -->
               <p>Hola me presento en la world wide web. Siempre me ha gustado aprender cosas utiles que me ayuden a <span class="font-medium text-indigo-600">facilitar</span>
               mi dia a dia. Es mi hobbie aprender las tecnologias web y su entorno. Ya tengo 2 años desde que comenze ha sido algo duro y complicado. desde ahora compartire trucos, guias, tutoriales que me ha ayudado a resolver problemas al momento de desarrollar una aplicacion. </p><span class="font-medium text-indigo-600">Sin más Espero que aprendas algo de acá</span>
             </div>
@@ -82,26 +77,26 @@
      </div>
      <!-- grid icons -->
       <div class="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-        <div class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200 |  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
+        <div data-aos="fade-up"  class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200 |  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
           <img class="max-h-16" src="assets/icon-technology/angular_icon.png" alt="angular_icon">
         </div>
-
-        <div class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
+        <div data-aos="fade-down" class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
             <img class="max-h-16" src="assets/icon-technology/js_icon.png" alt="js_icon">
         </div>
 
-        <div class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200 | transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
+        <div data-aos="fade-up" class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200 | transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
           <img class="max-h-16" src="assets/icon-technology/vue_icon.png" alt="vue_icon">
         </div>
 
-        <div class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
+        <div data-aos="fade-down"  class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
           <img class="max-h-16" src="assets/icon-technology/docker_icon.png" alt="docker_icon">
         </div>
 
-        <div class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
+        <div data-aos="fade-up" class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
           <img class="max-h-16" src="assets/icon-technology/html_icon.png" alt="html_icon">
         </div>
-        <div class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
+
+        <div data-aos="fade-down" class="col-span-1 flex justify-center py-8 px-8 bg-indigo-200  transform duration-300 ease-out hover:-translate-y-2 | cursor-pointer">
           <img class="max-h-16" src="assets/icon-technology/css_icon.png" alt="css_icon">
         </div>
 
@@ -120,10 +115,10 @@
     </div>
 
     <div>
-      <h4 class="text-2xl font-bold text-red-600">Solo tenemos tenemos que elegir la mas comoda para nosotros</h4>
-      <p class="text-xl text-red-500 mt-1" >Aquí encontraras herramientas para que tu Desarrollo Web del lado del Frontend sea toda una diversion </p>
+      <h4 data-aos="zoom-out-up" class="text-2xl font-bold text-red-600">Solo tenemos tenemos que elegir la mas comoda para nosotros</h4>
+      <p data-aos="zoom-out-down" class="text-xl text-red-500 mt-1" >Aquí encontraras herramientas para que tu Desarrollo Web del lado del Frontend sea toda una diversion </p>
       <!-- This example requires Tailwind CSS v2.0+ -->
-      <div class="">
+      <div data-aos="zoom-out-left" class="">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-3 gap-8">
 

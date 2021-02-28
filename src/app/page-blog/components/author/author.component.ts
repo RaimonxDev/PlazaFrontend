@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthorComponent implements OnInit {
 
-  APIurl : string = environment.APIurl;
+  APIurlDevImages : string = environment.APIurlDevImages;
   @Input() firtsName : string;
   @Input() lastName : string;
   @Input() emailAuthor : string;

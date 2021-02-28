@@ -12,7 +12,7 @@ import { SeoService } from '../../../shared/services/seo/seo.service';
   styleUrls: ['./home-blog.component.scss']
 })
 export class HomeBlogComponent implements OnInit, OnDestroy {
-  APIurl = environment.APIurl
+  APIurlDevImages = environment.APIurlDevImages
   posts: PostResponse[] = []
   errorData = false
 

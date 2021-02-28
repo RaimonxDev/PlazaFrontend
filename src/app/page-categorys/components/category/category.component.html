@@ -8,8 +8,8 @@
       <h2 class="text-3xl tracking-tight text-rose-600 sm:text-4xl">Articulos de <span class="capitalize border-b-4 border-rose-700">{{nameCategory}}</span></h2>
 
     </div>
-    <div class="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
-      <div *ngFor="let post of categoryPosts">
+    <div  class="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+      <div data-aos="fade-down" *ngFor="let post of categoryPosts">
         <p class="text-sm text-gray-500">
           <time datetime="2020-03-16">{{post.created_at | date:"dd/MM/yyy"}}</time>
         </p>

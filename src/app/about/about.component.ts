@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit, OnDestroy {
+
   content: AboutResponse;
 
   constructor(private _aboutServices: AboutService, private _seoServices: SeoService, private _router: Router) { }
