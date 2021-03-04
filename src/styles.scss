@@ -3,9 +3,15 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
 /* You can add global styles to this file, and also import other style files */
+/** Colors variables */
 
 .link-active {
   @apply text-indigo-500;
   @apply bg-indigo-100;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto pt-6 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20;
 }
