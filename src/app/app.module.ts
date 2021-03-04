@@ -12,11 +12,9 @@ import { HomeModule } from './pageHome/home.module';
 
 import { DISQUS_SHORTNAME } from 'ngx-disqus';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     CommonModule,

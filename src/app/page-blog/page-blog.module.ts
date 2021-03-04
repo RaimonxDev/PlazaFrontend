@@ -15,14 +15,13 @@ import { StrapiService } from "./services/strapi.service";
 import { PostResolve } from "./resolvers/post.resolver";
 
 // Pipes
-import {PipesModule} from "../pipes/pipes.module"
+import { PipesModule } from "../pipes/pipes.module"
 
 // Components
 import { PostComponent } from './components/post/post.component';
 import { HomeBlogComponent } from './components/home-blog/home-blog.component';
 import { AuthorComponent } from './components/author/author.component';
 import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.component";
-
 
 
 @NgModule({
@@ -39,8 +38,7 @@ import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.compo
     HttpClientModule,
     PipesModule,
     DisqusModule,
-    SharedModule
-
+    SharedModule,
   ],
   providers:[
     StrapiService,
