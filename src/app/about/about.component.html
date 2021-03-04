@@ -1,6 +1,6 @@
-<div class="bg-white overflow-hidden mx-auto">
-  <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-    <div class="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen"></div>
+<div class="overflow-hidden mx-auto ">
+  <div class="relative section-container">
+    <div class="hidden lg:block absolute top-0 bottom-0 left-3/4 w-screen"></div>
     <div class="mx-auto text-base max-w-prose lg:max-w-none">
       <h2 data-aos="fade-left" class="text-base text-indigo-600 font-semibold tracking-wide uppercase ">Hola soy</h2>
       <h3 data-aos="fade-right" class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Ramón Martinez</h3>
@@ -16,17 +16,17 @@
           </defs>
           <rect width="404" height="384" fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)" />
         </svg>
-        <div class="relative text-base mx-auto max-w-prose lg:max-w-none">
-
-        </div>
       </div>
 
-      <div class="mt-8 lg:mt-0 relative z-10">
-        <div data-aos="fade-up" *ngIf="content" class="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none">
-          <markdown ngPreserveWhitespaces>
-            {{content.content}}
-          </markdown>
-        </div>
+      <div class="mt-8 lg:mt-0 relative z-10 ">
+        <ng-container *ngIf="content" >
+          <div data-aos="fade-up" class="mt-5 prose prose-l prose-indigo text-gray-900 max-w-3xl">
+            <markdown ngPreserveWhitespaces>
+              {{content.content}}
+            </markdown>
+          </div>
+        </ng-container>
+
       </div>
     </div>
   </div>

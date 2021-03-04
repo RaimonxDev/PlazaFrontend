@@ -11,10 +11,12 @@ export class SanitizerUrlPipe implements PipeTransform {
   transform( url: string , value: string): SafeResourceUrl {
 
     // En produccion las url se guardan en AWS S3. Strapi devuelve la url completa
-    if(url === undefined  || url === ''){
+    if(url === undefined  || url === '' || url === null){
       return this.domSeguro.bypassSecurityTrustResourceUrl(value);
     }
-    return this.domSeguro.bypassSecurityTrustResourceUrl(url + value);
+    if(url) {
+      return this.domSeguro.bypassSecurityTrustResourceUrl(url + value);
+    }
   }
 
 }
