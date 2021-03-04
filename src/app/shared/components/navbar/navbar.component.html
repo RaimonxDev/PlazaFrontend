@@ -1,5 +1,5 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="bg-purewhite overflow-hidden p-2">
+<div (clickOutside)="onClickedOutside($event)" class="bg-purewhite overflow-hidden p-2">
   <div class="max-w-7xl mx-auto">
 
     <div class="z-10 bg-purewhite lg:max-w-7xl lg:w-full pb-4">
@@ -84,13 +84,10 @@
 
             <a [routerLink]="['/categories']" routerLinkActive="link-active" class="font-medium text-indigo-600 p-1 hover:bg-indigo-500 ease-out duration-200 rounded-sm hover:text-limon">Categorias</a>
 
-
           </div>
 
 
         </nav>
-
-
       </div>
 
       <!-- Mobile menu, -->
@@ -157,7 +154,7 @@
               </button>
             </div>
           </div>
-          <div role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
+          <div  role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
             <div class="px-2 pt-2 pb-3 space-y-1" role="none">
 
               <a [routerLink]="['/home']" routerLinkActive="link-active"  href="#" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-400 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Inicio</a>
@@ -170,13 +167,18 @@
 
               <!-- .................login ........... -->
 
-        </div>
+            </div>
+          </div>
+
+
       </div>
 
 
-    </div>
+
+
+
+
+
+
   </div>
-
-
-
 </div>

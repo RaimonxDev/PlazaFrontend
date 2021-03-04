@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { IconLoaderComponent } from './components/icon-loader/icon-loader.component';
 import { E503Component } from './errorsComponent/e503/e503.component';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 
 
@@ -13,17 +14,19 @@ import { E503Component } from './errorsComponent/e503/e503.component';
     FooterComponent,
     NavbarComponent,
     IconLoaderComponent,
-    E503Component
+    E503Component,
   ],
   imports: [
     CommonModule,
     RouterModule,
+    ClickOutsideModule
   ],
   exports : [
     FooterComponent,
     NavbarComponent,
     IconLoaderComponent,
-    E503Component
+    E503Component,
+    ClickOutsideModule
   ]
 })
 export class SharedModule { }
