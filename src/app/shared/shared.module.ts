@@ -6,6 +6,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { IconLoaderComponent } from './components/icon-loader/icon-loader.component';
 import { E503Component } from './errorsComponent/e503/e503.component';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
@@ -19,14 +20,16 @@ import { ClickOutsideModule } from 'ng-click-outside';
   imports: [
     CommonModule,
     RouterModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    MatProgressBarModule
   ],
   exports : [
     FooterComponent,
     NavbarComponent,
     IconLoaderComponent,
     E503Component,
-    ClickOutsideModule
+    ClickOutsideModule,
+    MatProgressBarModule
   ]
 })
 export class SharedModule { }

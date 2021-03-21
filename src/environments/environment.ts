@@ -3,14 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  // production: false,
+  // nameWeb: 'plazafrontend.io',
+  // urlWeb: "http://localhost:4200",
+  // APIurl: "http://localhost:1337",
+  // APIurlDevImages: "http://localhost:1337",
+  // endPointAllCategorys: 'http://localhost:1337/categories',
+  // endPointSingleCategory: 'http://localhost:1337/categories?name_category=deploy',
+  // GA: 'G-F1LL8546EJ'
+
+  // TEST
   production: false,
   nameWeb: 'plazafrontend.io',
-  urlWeb: "http://localhost:4200",
-  APIurl: "http://localhost:1337",
-  APIurlDevImages: "http://localhost:1337",
-  endPointAllCategorys: 'http://localhost:1337/categories',
-  endPointSingleCategory: 'http://localhost:1337/categories?name_category=deploy',
+  urlWeb: "https://plazafrontend.io",
+  APIurl: "https://api.plazafrontend.io",
+  APIurlDevImages:'', // Only for development, Images are saved to AWS S3 in production
+  endPointAllCategorys: 'https://api.plazafrontend.io/categories',
+  endPointSingleCategory: 'https://api.plazafrontend.io/categories?name_category=',
   GA: 'G-F1LL8546EJ'
+
 };
 
 /*

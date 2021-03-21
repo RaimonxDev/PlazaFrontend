@@ -12,7 +12,7 @@ import { DisqusModule } from 'ngx-disqus';
 // Services
 import { StrapiService } from "./services/strapi.service";
 // Resolver
-import { PostResolve } from "./resolvers/post.resolver";
+import { PostResolver } from "./resolvers/post.resolver";
 
 // Pipes
 import { PipesModule } from "../pipes/pipes.module"
@@ -22,6 +22,8 @@ import { PostComponent } from './components/post/post.component';
 import { HomeBlogComponent } from './components/home-blog/home-blog.component';
 import { AuthorComponent } from './components/author/author.component';
 import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.component";
+import { PostsResolver } from './resolvers/posts.resolver';
+
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.compo
   ],
   providers:[
     StrapiService,
-    PostResolve
+    PostResolver,
+    PostsResolver
 
   ]
 })

@@ -6,7 +6,7 @@
   <div class="relative max-w-7xl mx-auto min-h-full">
 
 
-    <ng-container *ngIf="posts ;else e503" >
+    <ng-container *ngIf="posts$ | async as posts; else loading" >
     <div class="text-center">
       <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
         Blog
@@ -77,8 +77,8 @@
       </div>
     </ng-container>
 
-    <ng-template #e503>
-      <app-e503></app-e503>
+    <ng-template #loading>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </ng-template>
   </div>
 </div>

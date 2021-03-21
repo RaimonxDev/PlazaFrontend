@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo:'home', pathMatch: 'full'},
-  { path: 'home', loadChildren:    () => import('./pageHome/home.module').then(m => m.HomeModule),data: {title:'home'} },
+  { path: 'home', loadChildren:    () => import('./page-home/home.module').then(m => m.HomeModule),data: {title:'home'} },
   { path: 'about', loadChildren:   () => import('./about/about.module').then(m => m.AboutModule),data: {title:'about'} },
   { path: 'blog', loadChildren:    () => import('./page-blog/page-blog.module').then(m => m.PageBlogModule),data: {title:'blog'} },
   { path: 'categories', loadChildren:    () => import('./page-categorys/page-categorys.module').then(m => m.PageCategorysModule),data: {title:'categories'} },

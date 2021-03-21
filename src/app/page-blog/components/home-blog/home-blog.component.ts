@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { PostResponse } from '../../models/PostResponse';
 import { StrapiService } from '../../services/strapi.service';
 import { SeoService } from '../../../shared/services/seo/seo.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home-blog',
@@ -13,7 +14,8 @@ import { SeoService } from '../../../shared/services/seo/seo.service';
 })
 export class HomeBlogComponent implements OnInit, OnDestroy {
   APIurlDevImages = environment.APIurlDevImages
-  posts: PostResponse[] = []
+  // posts: PostResponse[] = []
+  posts$ : Observable<PostResponse[]>
   errorData = false
 
   constructor( private _strapiServices: StrapiService,
@@ -23,10 +25,10 @@ export class HomeBlogComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
       this._seoService.getTagForPage( this._router.url)
-
-      this._strapiServices.getPosts().subscribe( (articles: PostResponse[]) => {
-        this.posts = articles
-      },err => this.errorData = true )
+      this.posts$ = this._strapiServices.posts$
+      // this._strapiServices.getPosts().subscribe( (articles: PostResponse[]) => {
+      //   this.posts = articles
+      // },err => this.errorData = true )
     }
 
     goToPost(slug: string){
