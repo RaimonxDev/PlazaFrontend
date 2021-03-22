@@ -1,3 +1,6 @@
+// Font Family
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;0,800;1,700&display=swap");
+
 @import "tailwindcss/base";
 
 @import "tailwindcss/components";
@@ -6,6 +9,28 @@
 
 /* You can add global styles to this file, and also import other style files */
 /** Colors variables */
+
+h1 {
+  @apply font-sans text-4xl;
+}
+h2 {
+  @apply font-sans text-3xl;
+}
+h3 {
+  @apply font-sans text-2xl;
+}
+
+h4 {
+  @apply font-sans text-xl;
+}
+
+h5 {
+  @apply font-sans text-lg;
+}
+
+h6 {
+  @apply font-sans text-sm;
+}
 
 .link-active {
   @apply text-indigo-500;
