@@ -16,6 +16,12 @@ Funciones que se pueden utilizar en todo la aplicacion
 
 _current_
 
+## 1.1.0
+
+Se agrega Angular Material al proyecto
+Post se ordenan por fecha de publicación
+Pequeñas correcciones de css
+
 ## 1.0.4
 
 Cierra el menu cuando se hace click por fuera
