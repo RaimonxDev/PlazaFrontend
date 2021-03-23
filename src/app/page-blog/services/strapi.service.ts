@@ -39,7 +39,11 @@ export class StrapiService {
    }
 
   getPosts() {
-    return this._http.get<PostResponse[]>(`${this.APIurl}/posts`)
+    return this._http.get<PostResponse[]>(`${this.APIurl}/posts`,{
+      params: {
+        '_sort':'created_at:DESC'
+      }
+    })
     .pipe(
       tap( posts => this._posts.next(posts) ),
       catchError(handleHttpResponseError)
