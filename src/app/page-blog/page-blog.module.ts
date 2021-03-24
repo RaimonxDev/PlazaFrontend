@@ -9,11 +9,6 @@ import { SharedModule } from '@shared/shared.module';
 // Discuss
 import { DisqusModule } from 'ngx-disqus';
 
-// Services
-import { StrapiService } from "./services/strapi.service";
-// Resolver
-import { PostResolver } from "./resolvers/post.resolver";
-
 // Pipes
 import { PipesModule } from "../pipes/pipes.module"
 
@@ -22,7 +17,7 @@ import { PostComponent } from './components/post/post.component';
 import { HomeBlogComponent } from './components/home-blog/home-blog.component';
 import { AuthorComponent } from './components/author/author.component';
 import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.component";
-import { PostsResolver } from './resolvers/posts.resolver';
+
 
 
 
@@ -42,11 +37,6 @@ import { PostsResolver } from './resolvers/posts.resolver';
     DisqusModule,
     SharedModule,
   ],
-  providers:[
-    StrapiService,
-    PostResolver,
-    PostsResolver
-
-  ]
+  providers:[]
 })
 export class PageBlogModule { }

@@ -4,11 +4,13 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable,} from 'rxjs';
 import { StrapiService } from '../services/strapi.service';
 import { PostResponse } from '../models/PostResponse';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class PostsResolver implements Resolve<PostResponse[]> {
 
   constructor(private _strapiService: StrapiService ){ }

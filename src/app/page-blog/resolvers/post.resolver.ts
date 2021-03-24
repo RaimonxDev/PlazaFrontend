@@ -6,7 +6,9 @@ import { StrapiService } from "../services/strapi.service";
 import { SeoService } from '../../shared/services/seo/seo.service';
 import { tap } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 
 export class PostResolver implements Resolve<PostResponse> {
 

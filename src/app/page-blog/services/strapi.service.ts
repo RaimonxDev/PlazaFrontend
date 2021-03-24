@@ -9,9 +9,11 @@ import { handleHttpResponseError } from "@utils/http-errors";
 
 import { environment } from 'src/environments/environment';
 import { PostResponse  } from "../models/PostResponse";
-import { Post } from '../../page-categorys/models/allCategorysResponse';
 
-@Injectable()
+
+@Injectable(
+  { providedIn: 'root' }
+)
 
 export class StrapiService {
   // url y port del sitio web
