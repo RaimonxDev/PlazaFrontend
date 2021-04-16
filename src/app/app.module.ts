@@ -11,11 +11,14 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './page-home/home.module';
 
 import { DISQUS_SHORTNAME } from 'ngx-disqus';
+import { ButtonUpComponent } from './shared/components/button-up/button-up.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ButtonUpComponent
   ],
   imports: [
     CommonModule,

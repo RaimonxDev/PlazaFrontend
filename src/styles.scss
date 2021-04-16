@@ -9,6 +9,9 @@
 
 /* You can add global styles to this file, and also import other style files */
 /** Colors variables */
+html {
+  scroll-behavior: smooth;
+}
 
 h1 {
   @apply font-sans text-4xl;

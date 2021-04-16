@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { takeUntil} from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { ModalsService } from '../../../shared/Modules/modals/modals.service';
+
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy{
 
   constructor(private formBuilder: FormBuilder,
               private _auth : AuthService,
-              private _modal : ModalsService) {
+            ) {
 
     this.buildForm()
    }
@@ -34,8 +34,6 @@ export class LoginComponent implements OnInit, OnDestroy{
       this._auth.UserHasLogged
       .pipe(takeUntil(this.unsubscribe$))
         .subscribe()
-
-       this.showModal()
   }
 
   isInvalid(field: string ){
@@ -57,7 +55,4 @@ export class LoginComponent implements OnInit, OnDestroy{
     this.unsubscribe$.complete();
   }
 
-  showModal () {
-    this._modal.isOpen.subscribe(open => this.openModal = open)
-  }
 }
