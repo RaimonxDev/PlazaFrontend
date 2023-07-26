@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.10 as build
+FROM --platform=linux/amd64 node:lts-alpine3.10 as build
 
 RUN mkdir /app
 
@@ -13,6 +13,6 @@ COPY ./ /app/
 
 RUN npm run build:prod
 
-FROM nginx:1.17.1-alpine
+FROM --platform=linux/amd64 nginx:1.17.1-alpine
 COPY --from=build /app/dist/plazaFrontend/browser /usr/share/nginx/html
 EXPOSE 80
